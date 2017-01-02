@@ -19,4 +19,6 @@
     <string name="wois_send">ENVOYER</string>
     <string name="woir_reply">REPONDRE</string>
     <string name="ohawc_load">Charger</string>
+    <string name="mfsapa_btn_start">Démarrer</string>
+    <string name="mfsapa_btn_stop">Arrêter</string>
 </resources>

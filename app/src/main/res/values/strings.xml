@@ -22,8 +22,11 @@
     <string name="menu_alert">MyFirstAlertDialog</string>
     <string name="menu_recycleview">MyFirstRecycleView</string>
     <string name="menu_okhttp_webclient">MyFirstOkHttpAndWebClient</string>
+    <string name="menu_service_permission">MyFirstServiceAndPermission</string>
     <string name="wois_send">SEND</string>
     <string name="woir_reply">REPLY</string>
     <string name="img">img</string>
     <string name="ohawc_load">Load</string>
+    <string name="mfsapa_btn_start">Start</string>
+    <string name="mfsapa_btn_stop">Stop</string>
 </resources>

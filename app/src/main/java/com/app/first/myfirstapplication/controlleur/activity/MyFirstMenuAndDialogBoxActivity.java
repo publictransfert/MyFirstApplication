@@ -1,10 +1,15 @@
 package com.app.first.myfirstapplication.controlleur.activity;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,6 +28,7 @@ import java.util.Calendar;
 public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
     private TextView txtTime, txtDate;
+    private static final int FINE_LOCATION_REQ_CODE = 1;
 
     //Remplir le menu
     @Override
@@ -79,6 +85,20 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
             case R.id.menu_okhttp_webclient:
                 Intent intentMyFirstOkHttpAndWebClientActivity = new Intent(this, MyFirstOkHttpAndWebClientActivity.class);
                 startActivity(intentMyFirstOkHttpAndWebClientActivity);
+                break;
+
+            case R.id.menu_service_permission:
+
+                //Etape 1 : Est ce qu'on a déjà la permission ?
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    //On a la permission
+                    Intent intentMyFirstServiceAndPermissionActivity = new Intent(this, MyFirstServiceAndPermissionActivity.class);
+                    startActivity(intentMyFirstServiceAndPermissionActivity);
+                }
+                else {
+                    //Etape 2 : On demande la permission
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION_REQ_CODE);
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -149,5 +169,23 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
         Toast.makeText(MyFirstMenuAndDialogBoxActivity.this, dayOfMonth + "/" + (monthOfYear + 1) + "/" + year, Toast.LENGTH_SHORT).show();
         txtDate = (TextView) findViewById(R.id.madb_tv_date);
         txtDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year, EditText.BufferType.EDITABLE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //Est ce que c'est la permission qu'on a demandé ?
+        if (requestCode == FINE_LOCATION_REQ_CODE) {
+            //On verifie la réponse
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                //On a la permission
+                Intent intentMyFirstServiceAndPermissionActivity = new Intent(this, MyFirstServiceAndPermissionActivity.class);
+                startActivity(intentMyFirstServiceAndPermissionActivity);
+            }
+            else {
+                //On n'a pas la permission
+                Toast.makeText(this, "Authorization required", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
