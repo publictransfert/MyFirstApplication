@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.widget.Toast;
 
-public class MyFisrtWifiBroadcastReceiver extends BroadcastReceiver {
-    public MyFisrtWifiBroadcastReceiver() {
+public class MyFirstWifiBroadcastReceiver extends BroadcastReceiver {
+    public MyFirstWifiBroadcastReceiver() {
     }
 
     @Override
