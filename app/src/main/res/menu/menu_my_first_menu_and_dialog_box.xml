@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_time_picker"
+        android:orderInCategory="100"
+        android:title="@string/menu_time"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_date_picker"
+        android:orderInCategory="101"
+        android:title="@string/menu_date"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_alert_dialog"
+        android:orderInCategory="102"
+        android:title="@string/menu_alert"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_recycleview"
+        android:orderInCategory="102"
+        android:title="@string/menu_recycleview"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_okhttp_webclient"
+        android:orderInCategory="103"
+        android:title="@string/menu_okhttp_webclient"
+        app:showAsAction="never"
+        />
+
+</menu>

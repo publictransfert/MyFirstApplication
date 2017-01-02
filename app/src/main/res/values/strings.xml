@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MyFirstApplication</string>
+    <string name="vrl_like">I like</string>
+    <string name="vrl_dont_like">I don\'t like</string>
+    <string name="vrl_label">Text</string>
+    <string name="vrl_cancel">Cancel</string>
+    <string name="vrl_validate">Validate</string>
+    <string name="vrl_next">Next</string>
+    <string name="madb_time">Time</string>
+    <string name="madb_date">Date</string>
+    <string name="rv_add">Add</string>
+    <string name="rv_load">Load</string>
+    <string name="rv_load_asynctask">Load AT</string>
+    <string name="rv_delete">Deleted</string>
+    <string name="rv_firstname">Firstname</string>
+    <string name="rv_lastname">Lastname</string>
+    <string name="rv_already_first">Already first</string>
+    <string name="rv_pd_title">Progress bar</string>
+    <string name="rv_pd_message">Loading in progress...</string>
+    <string name="menu_time">MyFirstTimePicker</string>
+    <string name="menu_date">MyFirstDatePicker</string>
+    <string name="menu_alert">MyFirstAlertDialog</string>
+    <string name="menu_recycleview">MyFirstRecycleView</string>
+    <string name="menu_okhttp_webclient">MyFirstOkHttpAndWebClient</string>
+    <string name="wois_send">SEND</string>
+    <string name="woir_reply">REPLY</string>
+    <string name="img">img</string>
+    <string name="ohawc_load">Load</string>
+</resources>

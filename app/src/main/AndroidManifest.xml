@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.app.first.myfirstapplication"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".controlleur.activity.MyFirstHelloWorldActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstViewLinearActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstViewRelativeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstMenuAndDialogBoxActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstRecycleViewActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.WorkOnIntentSendActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.WorkOnIntentReceiveActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstOkHttpAndWebClientActivity">
+        </activity>
+
+        <receiver
+            android:name=".controlleur.broadcast.MyFisrtWifiBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                //Non proposé dans l’auto-complétion.
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".controlleur.broadcast.MyFirstAirPlaneBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

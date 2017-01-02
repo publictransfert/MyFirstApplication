@@ -1,0 +1,22 @@
+<resources>
+    <string name="vrl_like">J\'aime</string>
+    <string name="vrl_dont_like">Je n\'aime pas</string>
+    <string name="vrl_cancel">Annuler</string>
+    <string name="vrl_label">Texte</string>
+    <string name="vrl_validate">Valider</string>
+    <string name="vrl_next">Suivant</string>
+    <string name="madb_time">Heure</string>
+    <string name="madb_date">Date</string>
+    <string name="rv_add">Ajouter</string>
+    <string name="rv_load">Charger</string>
+    <string name="rv_load_asynctask">Charger AT</string>
+    <string name="rv_delete">Supprimé</string>
+    <string name="rv_already_first">Déjà premier</string>
+    <string name="rv_firstname">Prénom</string>
+    <string name="rv_lastname">Nom</string>
+    <string name="rv_pd_title">Barre de chargement</string>
+    <string name="rv_pd_message">Chargement en cours...</string>
+    <string name="wois_send">ENVOYER</string>
+    <string name="woir_reply">REPONDRE</string>
+    <string name="ohawc_load">Charger</string>
+</resources>

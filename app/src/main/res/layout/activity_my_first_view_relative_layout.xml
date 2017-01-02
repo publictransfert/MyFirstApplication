@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/vrl_rbtn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/vrl_rbtn_like"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:buttonTint="@color/colorPrimary"
+            android:checked="true"
+            android:enabled="true"
+            android:text="@string/vrl_like"
+            />
+
+        <RadioButton
+            android:id="@+id/vrl_rbtn_dont_like"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:buttonTint="@color/colorPrimary"
+            android:text="@string/vrl_dont_like"
+            />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/vrl_txt_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/vrl_txt_edit"
+        android:layout_alignLeft="@+id/vrl_rbtn_group"
+        android:layout_below="@+id/vrl_rbtn_group"
+        android:gravity="center_vertical"
+        android:text="@string/vrl_label"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/vrl_txt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/vrl_rbtn_group"
+        android:layout_below="@+id/vrl_rbtn_group"
+        android:layout_toRightOf="@+id/vrl_txt_label"
+        android:inputType="text"/>
+
+    <ImageView
+        android:id="@+id/vrl_img_display"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/vrl_llayout"
+        android:layout_below="@+id/vrl_txt_edit"
+        android:src="@mipmap/ic_launcher"/>
+
+
+    <LinearLayout
+        android:id="@+id/vrl_llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="false"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/vrl_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/vrl_cancel"
+            />
+
+
+        <Button
+            android:id="@+id/vrl_btn_validate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:clickable="false"
+            android:text="@string/vrl_validate"/>
+
+        <Button
+            android:id="@+id/vrl_btn_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/vrl_next"/>
+    </LinearLayout>
+
+</RelativeLayout>
