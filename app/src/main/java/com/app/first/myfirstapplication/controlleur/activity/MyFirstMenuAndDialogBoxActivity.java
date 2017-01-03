@@ -82,6 +82,10 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                 Intent intentMyFirstRecycleViewActivity = new Intent(this, MyFirstRecycleViewActivity.class);
                 startActivity(intentMyFirstRecycleViewActivity);
                 break;
+            case R.id.menu_intent_exchanges:
+                Intent intentWorkOnIntentSendActivity = new Intent(this, WorkOnIntentSendActivity.class);
+                startActivity(intentWorkOnIntentSendActivity);
+                break;
             case R.id.menu_okhttp_webclient:
                 Intent intentMyFirstOkHttpAndWebClientActivity = new Intent(this, MyFirstOkHttpAndWebClientActivity.class);
                 startActivity(intentMyFirstOkHttpAndWebClientActivity);
@@ -99,6 +103,11 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                     //Etape 2 : On demande la permission
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION_REQ_CODE);
                 }
+                break;
+
+            case R.id.menu_notification:
+                Intent intentMyFirstNotificationActivity = new Intent(this, MyFirstNotificationActivity.class);
+                startActivity(intentMyFirstNotificationActivity);
                 break;
         }
         return super.onOptionsItemSelected(item);

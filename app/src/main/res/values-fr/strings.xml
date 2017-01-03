@@ -21,4 +21,6 @@
     <string name="ohawc_load">Charger</string>
     <string name="mfsapa_btn_start">Démarrer</string>
     <string name="mfsapa_btn_stop">Arrêter</string>
+    <string name="mfn_btn_notifiction_simple">Notification</string>
+    <string name="mfn_btn_notifiction_timer">Notification plannifié dans 5s</string>
 </resources>
