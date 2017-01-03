@@ -25,6 +25,7 @@
     <string name="menu_okhttp_webclient">MyFirstOkHttpAndWebClient</string>
     <string name="menu_service_permission">MyFirstServiceAndPermission</string>
     <string name="menu_notification">MyFirstNotification</string>
+    <string name="menu_9patch">MyFirst9patch</string>
     <string name="wois_send">SEND</string>
     <string name="woir_reply">REPLY</string>
     <string name="img">img</string>

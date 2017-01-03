@@ -29,9 +29,9 @@
         </activity>
         <activity android:name=".controlleur.activity.MyFirstRecycleViewActivity">
         </activity>
-        <activity android:name=".controlleur.activity.WorkOnIntentSendActivity">
+        <activity android:name=".controlleur.activity.MyFirstIntentSendActivity">
         </activity>
-        <activity android:name=".controlleur.activity.WorkOnIntentReceiveActivity">
+        <activity android:name=".controlleur.activity.MyFirstIntentReceiveActivity">
         </activity>
         <activity android:name=".controlleur.activity.MyFirstOkHttpAndWebClientActivity">
         </activity>
@@ -71,6 +71,9 @@
             android:enabled="true"
             android:exported="true">
         </receiver>
+
+        <activity android:name=".controlleur.activity.MyFirst9PatchActivity">
+        </activity>
     </application>
 
 </manifest>

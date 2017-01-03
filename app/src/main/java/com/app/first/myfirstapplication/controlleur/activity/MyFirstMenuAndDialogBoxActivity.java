@@ -83,7 +83,7 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                 startActivity(intentMyFirstRecycleViewActivity);
                 break;
             case R.id.menu_intent_exchanges:
-                Intent intentWorkOnIntentSendActivity = new Intent(this, WorkOnIntentSendActivity.class);
+                Intent intentWorkOnIntentSendActivity = new Intent(this, MyFirstIntentSendActivity.class);
                 startActivity(intentWorkOnIntentSendActivity);
                 break;
             case R.id.menu_okhttp_webclient:
@@ -108,6 +108,11 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
             case R.id.menu_notification:
                 Intent intentMyFirstNotificationActivity = new Intent(this, MyFirstNotificationActivity.class);
                 startActivity(intentMyFirstNotificationActivity);
+                break;
+
+            case R.id.menu_9patch:
+                Intent intentMyFirst9PatchActivity = new Intent(this, MyFirst9PatchActivity.class);
+                startActivity(intentMyFirst9PatchActivity);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.app.first.myfirstapplication.R;
 
-public class WorkOnIntentSendActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyFirstIntentSendActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText myTextEdit;
     private Button btnSend;
@@ -19,7 +19,7 @@ public class WorkOnIntentSendActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_work_on_intent_send);
+        setContentView(R.layout.activity_my_first_intent_send);
 
         myTextEdit = (EditText) findViewById(R.id.wois_txt_edit);
 
@@ -31,7 +31,7 @@ public class WorkOnIntentSendActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, WorkOnIntentReceiveActivity.class);
+        Intent intent = new Intent(this, MyFirstIntentReceiveActivity.class);
         intent.putExtra("text", myTextEdit.getText().toString());
         startActivityForResult(intent, 1);
     }

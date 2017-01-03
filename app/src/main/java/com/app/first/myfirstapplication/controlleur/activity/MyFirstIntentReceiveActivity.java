@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.app.first.myfirstapplication.R;
 
-public class WorkOnIntentReceiveActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyFirstIntentReceiveActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText myTextEdit;
     private Button btnReply;
@@ -19,7 +19,7 @@ public class WorkOnIntentReceiveActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_work_on_intent_receive);
+        setContentView(R.layout.activity_my_first_intent_receive);
 
         myTextEdit = (EditText) findViewById(R.id.woir_txt_edit);
 

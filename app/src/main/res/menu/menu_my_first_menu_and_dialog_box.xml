@@ -59,4 +59,11 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/menu_9patch"
+        android:orderInCategory="106"
+        android:title="@string/menu_9patch"
+        app:showAsAction="never"
+        />
+
 </menu>
