@@ -13,6 +13,8 @@ import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
+import com.app.first.myfirstapplication.controlleur.application.MyFirstApplication;
+
 public class MyFirstService extends Service implements LocationListener {
 
     private LocationManager locationMgr;
@@ -50,10 +52,11 @@ public class MyFirstService extends Service implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        Double latitude = location.getLatitude();
-        Double longitude = location.getLongitude();
+        //Double latitude = location.getLatitude();
+        //Double longitude = location.getLongitude();
         // Do something
-        Toast.makeText(this, latitude + " : " + longitude, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, latitude + " : " + longitude, Toast.LENGTH_SHORT).show();
+        MyFirstApplication.getEventBus().post(location);
     }
 
     @Override
