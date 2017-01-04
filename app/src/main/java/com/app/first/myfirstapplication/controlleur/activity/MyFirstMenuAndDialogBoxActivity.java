@@ -114,6 +114,11 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                 Intent intentMyFirst9PatchActivity = new Intent(this, MyFirst9PatchActivity.class);
                 startActivity(intentMyFirst9PatchActivity);
                 break;
+
+            case R.id.menu_bdd_utils:
+                Intent intentMyFirstBddActivity = new Intent(this, MyFirstBddActivity.class);
+                startActivity(intentMyFirstBddActivity);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

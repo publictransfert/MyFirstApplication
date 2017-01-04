@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class EleveBean implements Parcelable {
+    private long id;
     private String nom;
     private String prenom;
     private String photo;
@@ -24,6 +25,13 @@ public class EleveBean implements Parcelable {
         this();
         this.nom = nom;
         this.prenom = prenom;
+    }
+
+    public EleveBean(String nom, String prenom, long id) {
+        this();
+        this.nom = nom;
+        this.prenom = prenom;
+        this.id = id;
     }
 
     public String getNom() {
@@ -44,6 +52,14 @@ public class EleveBean implements Parcelable {
 
     public String getPhoto() {
         return photo;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     protected EleveBean(Parcel in) {

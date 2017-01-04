@@ -66,4 +66,11 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/menu_bdd_utils"
+        android:orderInCategory="106"
+        android:title="@string/menu_bdd_utils"
+        app:showAsAction="never"
+        />
+
 </menu>

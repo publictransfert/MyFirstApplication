@@ -16,34 +16,42 @@ import java.util.ArrayList;
 
 public class MyFirstRecycleViewAdapter extends RecyclerView.Adapter<MyFirstRecycleViewAdapter.ViewHolder> {
 
+    public enum TYPE_AFFICHAGE {AVEC_ID, AVEC_IMAGE}
+
     private ArrayList<EleveBean> eleveBeanList;
     private RVCallBack callBack;
+    private boolean showID = false;
+    private TYPE_AFFICHAGE type_affichage;
 
     //Constructeur
-    public MyFirstRecycleViewAdapter(ArrayList<EleveBean> eleveBeanList, RVCallBack callBack) {
+    public MyFirstRecycleViewAdapter(ArrayList<EleveBean> eleveBeanList, RVCallBack callBack, TYPE_AFFICHAGE type_affichage) {
         this.eleveBeanList = eleveBeanList;
         this.callBack = callBack;
+        this.type_affichage = type_affichage;
     }
 
     //Classe qui stocke les composants graphiques d'1 ligne
     protected static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtPrenom, txtNom;
+        public TextView txtPrenom, txtNom, txtId;
         public ImageView imgEleve;
         public LinearLayout layoutCellule;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txtPrenom = (TextView) itemView.findViewById(R.id.rvce_txt_firstname);
-            txtNom = (TextView) itemView.findViewById(R.id.rvce_txt_lastname);
-            imgEleve = (ImageView) itemView.findViewById(R.id.rvce_img_eleve);
-            layoutCellule = (LinearLayout) itemView.findViewById(R.id.layout_cellule_eleve);
+
+            txtId = (TextView) itemView.findViewById(R.id.mfbrv_txt_id);
+            txtPrenom = (TextView) itemView.findViewById(R.id.mfbrv_txt_firstname);
+            txtNom = (TextView) itemView.findViewById(R.id.mfbrv_txt_lastname);
+            layoutCellule = (LinearLayout) itemView.findViewById(R.id.mfbrv_ll_cellule_eleve);
+            imgEleve = (ImageView) itemView.findViewById(R.id.mfbrv_img_eleve);
         }
     }
 
     //Détermine quel fichier XML on utilise pour représanter une cellule
     @Override
     public MyFirstRecycleViewAdapter.ViewHolder onCreateViewHolder(ViewGroup vg, int viewType) {
-        View v = LayoutInflater.from(vg.getContext()).inflate(R.layout.activity_my_first_recycle_view_cellule_eleve, vg, false);
+
+        View v = LayoutInflater.from(vg.getContext()).inflate(R.layout.activity_my_first_bdd_recycle_view, vg, false);
         return new MyFirstRecycleViewAdapter.ViewHolder(v);
     }
 
@@ -54,7 +62,18 @@ public class MyFirstRecycleViewAdapter extends RecyclerView.Adapter<MyFirstRecyc
         final EleveBean eleveBean = eleveBeanList.get(position);
         holder.txtPrenom.setText(eleveBean.getPrenom());
         holder.txtNom.setText(eleveBean.getNom());
-        Glide.with(holder.imgEleve.getContext()).load(eleveBean.getPhoto()).asBitmap().into(holder.imgEleve);
+        if (type_affichage == TYPE_AFFICHAGE.AVEC_IMAGE) {
+            holder.imgEleve.setVisibility(View.VISIBLE);
+            holder.txtId.setVisibility(View.GONE);
+            Glide.with(holder.imgEleve.getContext()).load(eleveBean.getPhoto()).asBitmap().into(holder.imgEleve);
+        }
+        else {
+            String id = "" + eleveBean.getId();
+            holder.txtId.setText(id);
+            holder.txtId.setVisibility(View.VISIBLE);
+            holder.imgEleve.setVisibility(View.GONE);
+        }
+
         holder.layoutCellule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

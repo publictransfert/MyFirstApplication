@@ -11,12 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.app.first.myfirstapplication.vue.adapter.MyFirstRecycleViewAdapter;
 import com.app.first.myfirstapplication.R;
+import com.app.first.myfirstapplication.controlleur.at.ICallBack;
 import com.app.first.myfirstapplication.controlleur.at.LoadEleveAT;
 import com.app.first.myfirstapplication.model.beans.EleveBean;
-import com.app.first.myfirstapplication.controlleur.at.ICallBack;
 import com.app.first.myfirstapplication.model.dao.web.WebService;
+import com.app.first.myfirstapplication.vue.adapter.MyFirstRecycleViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,6 +25,7 @@ public class MyFirstRecycleViewActivity extends AppCompatActivity implements Vie
 
     private Button btnAddEleve, btnLoadEleve, btnLoadEleveAT;
     // Données
+    private boolean showID = false;
     private ArrayList<EleveBean> desEleveBeen;
     private MyFirstRecycleViewAdapter rVAdapter;
     // Composant graphique afficheur de RecyclerView.Adapter
@@ -50,7 +51,7 @@ public class MyFirstRecycleViewActivity extends AppCompatActivity implements Vie
         // Création de la liste
         desEleveBeen = new ArrayList<EleveBean>();
         // Instanciation d’un MyFirstRecycleViewAdapter
-        rVAdapter = new MyFirstRecycleViewAdapter(desEleveBeen, this);
+        rVAdapter = new MyFirstRecycleViewAdapter(desEleveBeen, this, MyFirstRecycleViewAdapter.TYPE_AFFICHAGE.AVEC_IMAGE);
         recycleView = (RecyclerView) findViewById(R.id.rv_rv_eleve);
         // L’adapter que l’on souhaite afficher
         recycleView.setAdapter(rVAdapter);
