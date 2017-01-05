@@ -26,7 +26,8 @@
     <string name="menu_service_permission">MyFirstServiceAndPermission</string>
     <string name="menu_notification">MyFirstNotification</string>
     <string name="menu_9patch">MyFirst9patch</string>
-    <string name="menu_bdd_utils">MyFirstBddUtils (SQLite)</string>
+    <string name="menu_bdd_utils">MyFirstBdd</string>
+    <string name="menu_green_dao">MyFirstGreenDao</string>
     <string name="wois_send">SEND</string>
     <string name="woir_reply">REPLY</string>
     <string name="img">img</string>
@@ -35,6 +36,6 @@
     <string name="mfsapa_btn_stop">Stop</string>
     <string name="mfn_btn_notifiction_simple">Notification</string>
     <string name="mfn_btn_notifiction_timer">Notification will be launch in 5s</string>
-    <string name="mfba_btn_add_eleve">Add Eleve</string>
-    <string name="mfba_btn_export">Export Database</string>
+    <string name="btn_add_eleve">Add Eleve</string>
+    <string name="btn_export">Export Database</string>
 </resources>

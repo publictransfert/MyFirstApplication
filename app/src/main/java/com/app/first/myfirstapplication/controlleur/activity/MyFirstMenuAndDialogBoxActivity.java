@@ -119,6 +119,11 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                 Intent intentMyFirstBddActivity = new Intent(this, MyFirstBddActivity.class);
                 startActivity(intentMyFirstBddActivity);
                 break;
+
+            case R.id.menu_green_dao:
+                Intent intentMyFirstGreenDaoActivity = new Intent(this, MyFirstGreenDaoActivity.class);
+                startActivity(intentMyFirstGreenDaoActivity);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

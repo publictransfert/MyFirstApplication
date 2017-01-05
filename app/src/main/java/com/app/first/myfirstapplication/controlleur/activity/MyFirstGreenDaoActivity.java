@@ -14,33 +14,34 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.app.first.myfirstapplication.R;
-import com.app.first.myfirstapplication.controlleur.at.LoadEleveAT;
-import com.app.first.myfirstapplication.model.beans.EleveBean;
-import com.app.first.myfirstapplication.model.dao.bdd.EleveBddManager;
+import com.app.first.myfirstapplication.model.dao.bdd.EleveGreenDaoManager;
 import com.app.first.myfirstapplication.model.dao.bdd.MaBaseSqlite;
-import com.app.first.myfirstapplication.vue.adapter.MyFirstRecycleViewAdapter;
+import com.app.first.myfirstapplication.vue.adapter.MyFirstRecycleViewForGreenDaoAdapter;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MyFirstBddActivity extends AppCompatActivity implements View.OnClickListener, MyFirstRecycleViewAdapter.RVCallBack {
+import javapackage.Eleve;
+
+public class MyFirstGreenDaoActivity extends AppCompatActivity implements View.OnClickListener, MyFirstRecycleViewForGreenDaoAdapter.RVCallBack {
 
     private Button btnAddEleve, btnExportBdd;
-    private ArrayList<EleveBean> desElevesBean;
-    private MyFirstRecycleViewAdapter rVAdapter;
+    // Données
+    private ArrayList<Eleve> desEleves;
+    private MyFirstRecycleViewForGreenDaoAdapter rVAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_first_bdd);
-        btnAddEleve = (Button) findViewById(R.id.mfba_btn_add_eleve);
+        setContentView(R.layout.activity_my_first_green_dao);
+        btnAddEleve = (Button) findViewById(R.id.mfgd_btn_add_eleve);
         btnAddEleve.setOnClickListener(this);
-        btnExportBdd = (Button) findViewById(R.id.mfba_btn_export);
+        btnExportBdd = (Button) findViewById(R.id.mfgd_btn_export);
         btnExportBdd.setOnClickListener(this);
-        desElevesBean = new ArrayList<>();
-        desElevesBean.addAll(EleveBddManager.getAllEleves());
-        rVAdapter = new MyFirstRecycleViewAdapter(desElevesBean, this, MyFirstRecycleViewAdapter.TYPE_AFFICHAGE.AVEC_ID);
-        RecyclerView recycleView = (RecyclerView) findViewById(R.id.mfba_rv_display_eleve);
+        desEleves = new ArrayList<>();
+        desEleves.addAll(EleveGreenDaoManager.getAllEleve());
+        rVAdapter = new MyFirstRecycleViewForGreenDaoAdapter(desEleves, this);
+        RecyclerView recycleView = (RecyclerView) findViewById(R.id.mfgd_rv_display_eleve);
         recycleView.setAdapter(rVAdapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
         recycleView.setItemAnimator(new DefaultItemAnimator());
@@ -49,17 +50,17 @@ public class MyFirstBddActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if (v == btnAddEleve) {
-            EleveBean unEleveBean = new EleveBean();
-            unEleveBean.setNom(getResources().getString(R.string.rv_lastname) + "_" + new Random().nextInt(20));
-            unEleveBean.setPrenom(getResources().getString(R.string.rv_firstname) + "_" + new Random().nextInt(20));
-            EleveBddManager.insertEleve(unEleveBean);
-            desElevesBean.add(0, unEleveBean);
-            Toast.makeText(MyFirstBddActivity.this, getResources().getString(R.string.btn_add_eleve), Toast.LENGTH_SHORT).show();
+            Eleve unEleve = new Eleve();
+            unEleve.setNom(getResources().getString(R.string.rv_lastname) + "_" + new Random().nextInt(20));
+            unEleve.setPrenom(getResources().getString(R.string.rv_firstname) + "_" + new Random().nextInt(20));
+            EleveGreenDaoManager.insertOrUpdate(unEleve);
+            desEleves.add(0, unEleve);
+            Toast.makeText(MyFirstGreenDaoActivity.this, getResources().getString(R.string.btn_add_eleve), Toast.LENGTH_SHORT).show();
             rVAdapter.notifyDataSetChanged();
         }
         if (v == btnExportBdd) {
             verifyStoragePermissions(this);
-            MaBaseSqlite.CopySQLiteBaseToDownload(this, "myFirstBdd.db");
+            MaBaseSqlite.CopySQLiteBaseToDownload(this, "mygreentable-db");
         }
     }
 
@@ -92,14 +93,14 @@ public class MyFirstBddActivity extends AppCompatActivity implements View.OnClic
     }
 
     @Override
-    public void onEleveClic(EleveBean eleveBean) {
-        EleveBddManager.removeEleveWithID(eleveBean.getId());
-        rVAdapter.notifyItemRemoved(desElevesBean.indexOf(eleveBean));
-        desElevesBean.remove(eleveBean);
+    public void onEleveClic(Eleve unEleve) {
+        EleveGreenDaoManager.deleteEleveWithId(unEleve.getId());
+        rVAdapter.notifyItemRemoved(desEleves.indexOf(unEleve));
+        desEleves.remove(unEleve);
     }
 
     @Override
-    public void onLongEleveClic(EleveBean eleveBean) {
+    public void onLongEleveClic(Eleve unEleve) {
 
     }
 }

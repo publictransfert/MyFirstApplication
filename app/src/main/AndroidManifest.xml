@@ -77,6 +77,8 @@
         <activity android:name=".controlleur.activity.MyFirst9PatchActivity">
         </activity>
         <activity android:name=".controlleur.activity.MyFirstBddActivity">
+    </activity>
+        <activity android:name=".controlleur.activity.MyFirstGreenDaoActivity">
         </activity>
     </application>
 

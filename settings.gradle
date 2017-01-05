@@ -1,1 +1,1 @@
-include ':app', ':citysearch'
+include ':app', ':citysearch', ':MyDaoGenerator'

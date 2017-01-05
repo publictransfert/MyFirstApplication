@@ -68,10 +68,10 @@ public class MyFirstRecycleViewAdapter extends RecyclerView.Adapter<MyFirstRecyc
             Glide.with(holder.imgEleve.getContext()).load(eleveBean.getPhoto()).asBitmap().into(holder.imgEleve);
         }
         else {
-            String id = "" + eleveBean.getId();
-            holder.txtId.setText(id);
             holder.txtId.setVisibility(View.VISIBLE);
             holder.imgEleve.setVisibility(View.GONE);
+            String id = "" + eleveBean.getId();
+            holder.txtId.setText(id);
         }
 
         holder.layoutCellule.setOnClickListener(new View.OnClickListener() {

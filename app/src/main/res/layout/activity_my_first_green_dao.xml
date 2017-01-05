@@ -11,13 +11,13 @@
     tools:context="com.app.first.myfirstapplication.controlleur.activity.MyFirstBddActivity">
 
     <LinearLayout
-        android:id="@+id/mfba_ll"
+        android:id="@+id/mfgd_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/mfba_btn_add_eleve"
+            android:id="@+id/mfgd_btn_add_eleve"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
             android:text="@string/btn_add_eleve"/>
 
         <Button
-            android:id="@+id/mfba_btn_export"
+            android:id="@+id/mfgd_btn_export"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,10 +33,10 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/mfba_rv_display_eleve"
+        android:id="@+id/mfgd_rv_display_eleve"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/mfba_ll"
+        android:layout_below="@+id/mfgd_ll"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
