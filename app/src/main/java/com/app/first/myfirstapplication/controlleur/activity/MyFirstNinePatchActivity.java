@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.app.first.myfirstapplication.R;
 
-public class MyFirst9PatchActivity extends AppCompatActivity {
+public class MyFirstNinePatchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_first_9_patch);
+        setContentView(R.layout.activity_my_first_nine_patch);
     }
 }

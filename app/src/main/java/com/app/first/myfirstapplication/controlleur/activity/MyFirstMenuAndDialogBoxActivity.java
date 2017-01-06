@@ -111,7 +111,7 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
                 break;
 
             case R.id.menu_9patch:
-                Intent intentMyFirst9PatchActivity = new Intent(this, MyFirst9PatchActivity.class);
+                Intent intentMyFirst9PatchActivity = new Intent(this, MyFirstNinePatchActivity.class);
                 startActivity(intentMyFirst9PatchActivity);
                 break;
 
@@ -123,6 +123,10 @@ public class MyFirstMenuAndDialogBoxActivity extends AppCompatActivity implement
             case R.id.menu_green_dao:
                 Intent intentMyFirstGreenDaoActivity = new Intent(this, MyFirstGreenDaoActivity.class);
                 startActivity(intentMyFirstGreenDaoActivity);
+                break;
+            case R.id.menu_fragment:
+                Intent intentMyFirstFragmentActivity = new Intent(this, MyFirstFragmentActivity.class);
+                startActivity(intentMyFirstFragmentActivity);
                 break;
         }
         return super.onOptionsItemSelected(item);

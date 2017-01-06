@@ -80,4 +80,11 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/menu_fragment"
+        android:orderInCategory="106"
+        android:title="@string/menu_fragment"
+        app:showAsAction="never"
+        />
+
 </menu>

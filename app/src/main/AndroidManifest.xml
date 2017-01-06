@@ -74,11 +74,14 @@
             android:exported="true">
         </receiver>
 
-        <activity android:name=".controlleur.activity.MyFirst9PatchActivity">
+        <activity android:name=".controlleur.activity.MyFirstNinePatchActivity">
         </activity>
         <activity android:name=".controlleur.activity.MyFirstBddActivity">
-    </activity>
+        </activity>
         <activity android:name=".controlleur.activity.MyFirstGreenDaoActivity">
+        </activity>
+        <activity android:name=".controlleur.activity.MyFirstFragmentActivity">
+
         </activity>
     </application>
 

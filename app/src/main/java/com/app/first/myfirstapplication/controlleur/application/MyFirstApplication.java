@@ -3,6 +3,7 @@ package com.app.first.myfirstapplication.controlleur.application;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.app.first.myfirstapplication.R;
 import com.app.first.myfirstapplication.model.dao.bdd.MaBaseSqlite;
 import com.squareup.otto.Bus;
 
@@ -37,6 +38,15 @@ public class MyFirstApplication extends Application {
         SQLiteDatabase db = helper.getWritableDatabase();
         DaoMaster daoMaster = new DaoMaster(db);
         daoSession = daoMaster.newSession();
+    }
+
+    /**
+     * Detect si on est en simple ou double affichage
+     *
+     * @return
+     */
+    public boolean isTwoPane() {
+        return getResources().getBoolean(R.bool.twoPane);
     }
 
     public DaoSession getDaoSession() {
